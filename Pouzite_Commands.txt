@@ -1,0 +1,243 @@
+Thu Dec 18 14:05:49 2025   Switch0   Switch>en
+Thu Dec 18 14:05:54 2025   Switch0   Switch#conf t
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config)#en
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config)#conf t
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config)#vlan 10
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-vlan)#name Zamestnanci
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-vlan)#name Management
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-vlan)#name Kamery
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-vlan)#exit
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config)#interface range fa0/1 - 2
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-if-range)#switchport access vlan 10
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-if-range)#interface range fa0/3 - 4
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-if-range)#switchport access vlan 20
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-if-range)#interface fa0/5
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-if)#switchport mode access
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-if)#switchport access vlan 30
+Thu Dec 18 14:06:08 2025   Switch0   Switch(config-if)#interface gig0/1
+Thu Dec 18 14:06:12 2025   Switch0   Switch(config-if)#switchport mode trunk
+Thu Dec 18 14:06:26 2025   Switch0   Switch(config-if)#conf t
+Thu Dec 18 14:06:40 2025   Switch0   Switch(config-if)#vlan 10
+Thu Dec 18 14:06:50 2025   Switch0   Switch(config-vlan)#name Zamestnanci
+Thu Dec 18 14:07:01 2025   Switch0   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:07:16 2025   Switch0   Switch(config-vlan)#name Management
+Thu Dec 18 14:07:23 2025   Switch0   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:07:33 2025   Switch0   Switch(config-vlan)#name Kamery
+Thu Dec 18 14:07:37 2025   Switch0   Switch(config-vlan)#exit
+Thu Dec 18 14:07:57 2025   Switch0   Switch(config)#interface range fa0/1 - 2
+Thu Dec 18 14:08:03 2025   Switch0   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:08:09 2025   Switch0   Switch(config-if-range)#switchport access vlan 10
+Thu Dec 18 14:08:15 2025   Switch0   Switch(config-if-range)#interface range fa0/3 - 4
+Thu Dec 18 14:08:21 2025   Switch0   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:08:26 2025   Switch0   Switch(config-if-range)#switchport access vlan 20
+Thu Dec 18 14:08:33 2025   Switch0   Switch(config-if-range)#interface fa0/5
+Thu Dec 18 14:08:40 2025   Switch0   Switch(config-if)#switchport mode access
+Thu Dec 18 14:08:51 2025   Switch0   Switch(config-if)#switchport access vlan 30
+Thu Dec 18 14:09:02 2025   Switch0   Switch(config-if)#interface gig0/1
+Thu Dec 18 14:09:09 2025   Switch0   Switch(config-if)#switchport mode trunk
+Thu Dec 18 14:09:34 2025   Switch4   Switch>en
+Thu Dec 18 14:09:34 2025   Switch4   Switch#conf t
+Thu Dec 18 14:09:34 2025   Switch4   Switch(config)#vlan 10
+Thu Dec 18 14:09:34 2025   Switch4   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:09:34 2025   Switch4   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:09:34 2025   Switch4   Switch(config-vlan)#exit
+Thu Dec 18 14:09:34 2025   Switch4   Switch(config)#interface range fa0/1 - 4  # Connections to the 4 floor switches
+Thu Dec 18 14:09:34 2025   Switch4   Switch(config)#switchport mode trunk
+Thu Dec 18 14:09:34 2025   Switch4   Switch(config)#interface gig0/1           # Connection to the Core 3560 Switch
+Thu Dec 18 14:10:00 2025   Switch4   Switch(config)#switchport mode trunkinterface range fa0/1 - 4
+Thu Dec 18 14:10:47 2025   Switch4   Switch(config)#switchport mode trunkinterface range fa0/1 - 4
+Thu Dec 18 14:11:57 2025   Switch4   Switch(config)#interface range fa0/1 - 4
+Thu Dec 18 14:12:05 2025   Switch4   Switch(config-if-range)#switchport mode trunk
+Thu Dec 18 14:12:28 2025   Switch4   Switch(config-if-range)#interface gig0/1
+Thu Dec 18 14:12:34 2025   Switch4   Switch(config-if)#switchport mode trunk
+Thu Dec 18 14:13:04 2025   Switch5   Switch>en
+Thu Dec 18 14:13:04 2025   Switch5   Switch#conf t
+Thu Dec 18 14:13:04 2025   Switch5   Switch(config)#vlan 10
+Thu Dec 18 14:13:04 2025   Switch5   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:13:04 2025   Switch5   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:13:07 2025   Switch5   Switch(config-vlan)#exit
+Thu Dec 18 14:13:43 2025   Switch5   Switch(config)#interface range fa0/1 - 4
+Thu Dec 18 14:13:48 2025   Switch5   Switch(config-if-range)#switchport mode trunk
+Thu Dec 18 14:14:07 2025   Switch5   Switch(config-if-range)#interface gig0/1
+Thu Dec 18 14:14:15 2025   Switch5   Switch(config-if)#switchport mode trunk
+Thu Dec 18 14:25:20 2025   Multilayer Switch1   Switch>en
+Thu Dec 18 14:25:21 2025   Multilayer Switch1   Switch#conf t
+Thu Dec 18 14:25:30 2025   Multilayer Switch1   Switch(config)#ip routing
+Thu Dec 18 14:25:38 2025   Multilayer Switch1   Switch(config)#vlan 10
+Thu Dec 18 14:25:38 2025   Multilayer Switch1   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:25:38 2025   Multilayer Switch1   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:25:42 2025   Multilayer Switch1   Switch(config-vlan)#exit
+Thu Dec 18 14:25:50 2025   Multilayer Switch1   Switch(config)#interface range fa0/1 - 2
+Thu Dec 18 14:25:50 2025   Multilayer Switch1   Switch(config-if-range)#switchport trunk encapsulation dot1q
+Thu Dec 18 14:25:51 2025   Multilayer Switch1   Switch(config-if-range)#switchport mode trunk
+Thu Dec 18 14:26:00 2025   Multilayer Switch1   Switch(config-if-range)#interface vlan 10
+Thu Dec 18 14:26:00 2025   Multilayer Switch1   Switch(config-if)#ip address 192.168.10.1 255.255.255.0
+Thu Dec 18 14:26:00 2025   Multilayer Switch1   Switch(config-if)#interface vlan 20
+Thu Dec 18 14:26:00 2025   Multilayer Switch1   Switch(config-if)#ip address 192.168.20.1 255.255.255.0
+Thu Dec 18 14:26:00 2025   Multilayer Switch1   Switch(config-if)#interface vlan 30
+Thu Dec 18 14:26:02 2025   Multilayer Switch1   Switch(config-if)#ip address 192.168.30.1 255.255.255.0
+Thu Dec 18 14:26:24 2025   Switch1   Switch>en
+Thu Dec 18 14:26:24 2025   Switch1   Switch#conf t
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config)#vlan 10
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-vlan)#name Zamestnanci
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-vlan)#name Management
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-vlan)#name Kamery
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-vlan)#exit
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config)#interface range fa0/1 - 2
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-if-range)#switchport access vlan 10
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-if-range)#interface range fa0/3 - 4
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-if-range)#switchport access vlan 20
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-if-range)#interface fa0/5
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-if)#switchport mode access
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-if)#switchport access vlan 30
+Thu Dec 18 14:26:24 2025   Switch1   Switch(config-if)#interface gig0/1
+Thu Dec 18 14:26:26 2025   Switch1   Switch(config-if)#switchport mode trunk
+Thu Dec 18 14:26:37 2025   Switch2   Switch>en
+Thu Dec 18 14:26:37 2025   Switch2   Switch#conf t
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config)#vlan 10
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-vlan)#name Zamestnanci
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-vlan)#name Management
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-vlan)#name Kamery
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-vlan)#exit
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config)#interface range fa0/1 - 2
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-if-range)#switchport access vlan 10
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-if-range)#interface range fa0/3 - 4
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-if-range)#switchport access vlan 20
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-if-range)#interface fa0/5
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-if)#switchport mode access
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-if)#switchport access vlan 30
+Thu Dec 18 14:26:37 2025   Switch2   Switch(config-if)#interface gig0/1
+Thu Dec 18 14:26:38 2025   Switch2   Switch(config-if)#switchport mode trunk
+Thu Dec 18 14:26:48 2025   Switch3   Switch>en
+Thu Dec 18 14:26:48 2025   Switch3   Switch#conf t
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config)#vlan 10
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-vlan)#name Zamestnanci
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-vlan)#name Management
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-vlan)#name Kamery
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-vlan)#exit
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config)#interface range fa0/1 - 2
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-if-range)#switchport access vlan 10
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-if-range)#interface range fa0/3 - 4
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-if-range)#switchport access vlan 20
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-if-range)#interface fa0/5
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-if)#switchport mode access
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-if)#switchport access vlan 30
+Thu Dec 18 14:26:48 2025   Switch3   Switch(config-if)#interface gig0/1
+Thu Dec 18 14:26:49 2025   Switch3   Switch(config-if)#switchport mode trunk
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch>en
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch#conf t
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config)#vlan 10
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-vlan)#name Zamestnanci
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-vlan)#name Management
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-vlan)#name Kamery
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-vlan)#exit
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config)#interface range fa0/1 - 2
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-if-range)#switchport access vlan 10
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-if-range)#interface range fa0/3 - 4
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-if-range)#switchport access vlan 20
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-if-range)#interface fa0/5
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-if)#switchport mode access
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-if)#switchport access vlan 30
+Thu Dec 18 14:26:56 2025   Switch0(1)   Switch(config-if)#interface gig0/1
+Thu Dec 18 14:26:57 2025   Switch0(1)   Switch(config-if)#switchport mode trunk
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch>en
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch#conf t
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config)#vlan 10
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-vlan)#name Zamestnanci
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-vlan)#name Management
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-vlan)#name Kamery
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-vlan)#exit
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config)#interface range fa0/1 - 2
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-if-range)#switchport access vlan 10
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-if-range)#interface range fa0/3 - 4
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-if-range)#switchport access vlan 20
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-if-range)#interface fa0/5
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-if)#switchport mode access
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-if)#switchport access vlan 30
+Thu Dec 18 14:27:04 2025   Switch1(1)   Switch(config-if)#interface gig0/1
+Thu Dec 18 14:27:05 2025   Switch1(1)   Switch(config-if)#switchport mode trunk
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch>en
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch#conf t
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config)#vlan 10
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-vlan)#name Zamestnanci
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-vlan)#name Management
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-vlan)#name Kamery
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-vlan)#exit
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config)#interface range fa0/1 - 2
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-if-range)#switchport access vlan 10
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-if-range)#interface range fa0/3 - 4
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-if-range)#switchport access vlan 20
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-if-range)#interface fa0/5
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-if)#switchport mode access
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-if)#switchport access vlan 30
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-if)#interface gig0/1
+Thu Dec 18 14:27:18 2025   Switch2(1)   Switch(config-if)#switchport mode trunk
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch>en
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch#conf t
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config)#vlan 10
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-vlan)#name Zamestnanci
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-vlan)#vlan 20
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-vlan)#name Management
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-vlan)#vlan 30
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-vlan)#name Kamery
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-vlan)#exit
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config)#interface range fa0/1 - 2
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-if-range)#switchport access vlan 10
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-if-range)#interface range fa0/3 - 4
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-if-range)#switchport mode access
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-if-range)#switchport access vlan 20
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-if-range)#interface fa0/5
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-if)#switchport mode access
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-if)#switchport access vlan 30
+Thu Dec 18 14:27:25 2025   Switch3(1)   Switch(config-if)#interface gig0/1
+Thu Dec 18 14:27:26 2025   Switch3(1)   Switch(config-if)#switchport mode trunk
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch>enable
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch#configure terminal
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch(config)#ip routing
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch(config)#interface vlan 10
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch(config-if)#ip address 192.168.10.1 255.255.255.0
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch(config-if)#no shutdown
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch(config-if)#interface vlan 20
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch(config-if)#ip address 192.168.20.1 255.255.255.0
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch(config-if)#no shutdown
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch(config-if)#interface vlan 30
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch(config-if)#ip address 192.168.30.1 255.255.255.0
+Thu Dec 18 19:49:13 2025   Multilayer Switch1   Switch(config-if)#no shutdown
+Thu Dec 18 19:49:15 2025   Multilayer Switch1   Switch(config-if)#exit
+Thu Dec 18 19:49:23 2025   Multilayer Switch1   Switch(config)#access-list 101 permit ip 192.168.20.0 0.0.0.255 any
+Thu Dec 18 19:49:23 2025   Multilayer Switch1   Switch(config)#access-list 101 deny ip 192.168.10.0 0.0.0.255 192.168.30.0 0.0.0.255
+Thu Dec 18 19:49:23 2025   Multilayer Switch1   Switch(config)#access-list 101 permit ip any any
+Thu Dec 18 19:49:23 2025   Multilayer Switch1   Switch(config)#interface vlan 30
+Thu Dec 18 19:49:23 2025   Multilayer Switch1   Switch(config-if)#ip access-group 101 out
+Thu Dec 18 19:49:24 2025   Multilayer Switch1   Switch(config-if)#exit
+Fri Dec 19 16:45:21 2025   Switch4   Switch>enable
+Fri Dec 19 16:45:21 2025   Switch4   Switch#configure terminal
